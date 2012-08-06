@@ -1,6 +1,7 @@
 /*
  Ryan Koven 2012
- div_and_mult.h: c++ header file that defines several functions that implement several new and old algorithms for multiplying and dividing integers. 
+ div_and_mult.h: c++ header file that defines several functions that implement several new and old algorithms for multiplying and dividing integers,
+ and other fun things. 
  References: Dasgupta, Papadimitriou, Vazirani: Algorithms. 2008.
 */
 
@@ -191,6 +192,37 @@ long long Karatsuba_Mult(int x, int y){
 	return product;
 }
 
+}
+
+/* htoi: converts hexadecimal numbers entered as a c-style string into integers */
+int htoi(char s[]){
+	int i, n;
+	n = 0;
+
+	if (s[0] == '0' && (s[1] == 'x' || s[1] == 'X')){
+		for (i = 2; (s[i] >= '0' && s[i] <='9') || (s[i]>='a' && s[i]<='f') || (s[i]>='A' && s[i]<='F'); i++ ){
+			if (s[i] >= '0' && s[i] <='9')
+				n = 16*n + (s[i] - '0');
+			else if (s[i] >= 'A' && s[i] <= 'F') 
+				n = 16*n + 10 + (s[i] - 'A');
+			else 
+				n = 16*n + 10 + (s[i] - 'a');
+}
+
+	}
+
+	else{
+		for (i = 0; (s[i] >= '0' && s[i] <='9') || (s[i]>='a' && s[i]<='f') || (s[i]>='A' && s[i]<='F'); i++ ){
+			if (s[i] >= '0' && s[i] <='9')
+				n = 16*n + (s[i] - '0');
+			else if (s[i] >= 'A' && s[i] <= 'F') 
+				n = 16*n + 10 + (s[i] - 'A');
+			else 
+				n = 16*n + 10 + (s[i] - 'a');
+}
+	    }
+
+	return n;
 }
 
 #endif
