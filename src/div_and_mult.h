@@ -253,4 +253,17 @@ bool primality(int N){
 	 return prime;
  }
 
+ // Returns the sum of all of the proper divisors of a integer n. The "sigma function" or "divisor function" in Number Theory. 
+long long sigma(long long n){
+	long long sum = 1;
+	for (long long i = 2; i*i <= n; i++){
+		if (n%i == 0){
+			sum+=i;
+			if (n/i != i)
+				sum+=n/i;
+			          }
+	}
+	return sum;
+}
+
 #endif
