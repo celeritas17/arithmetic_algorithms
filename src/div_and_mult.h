@@ -225,4 +225,32 @@ int htoi(char s[]){
 	return n;
 }
 
+bool isPrime(long long n){
+	if ( n < 0) n*=-1;
+	if (n == 1) return false;
+	for (long long i = 2; i*i<=n; i++)
+		if (n%i == 0) return false;
+
+	return true;
+}
+
+bool primality(int N){
+	 
+	 bool prime = true;
+
+	 int a;
+
+	 for (int j = 0; j < 100; j++){
+		 a = 1 + rand()%(N-1);
+		 
+		 if ((modexp(a, N-1, N) - 1) != 0){
+			 prime = false;
+			 break;
+					}
+
+	 }
+
+	 return prime;
+ }
+
 #endif
